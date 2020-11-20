@@ -9,6 +9,7 @@ export default function UseContext () {
 
   return (
     <>
+      <h2>useContext</h2>
       <div>You click {count} times</div>
       <button onClick={() => { setCount(count + 1) }}>点击+1</button>
       <CountContext.Provider value={count}>
