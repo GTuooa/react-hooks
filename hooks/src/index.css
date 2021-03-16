@@ -67,3 +67,14 @@ body {
   border: 1px solid #ccc;
   margin-left: 10px;
 }
+.box {
+  height: 500px;
+  border: 1px solid red;
+  overflow-y: auto;
+  background-color: bisque;
+}
+.list {
+  height: 100px;
+  background-color: burlywood;
+  text-align: center;
+}
