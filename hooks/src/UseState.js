@@ -12,6 +12,7 @@ export default function UseState (props) {
   console.log("render", page, list)
 
   const divRef = useRef()
+  const rootRef = useRef()
 
   useEffect(() => {
     // http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html
@@ -28,8 +29,12 @@ export default function UseState (props) {
             }
           })
         }
+    }, {
+      root:rootRef.current,
+      rootMargin:'0px 0px 100px 0px'
     })
     io.observe(divRef.current)
+
     return () => io.disconnect()
   }, [])
 
@@ -53,7 +58,7 @@ export default function UseState (props) {
       <button onClick={() => { setCount(count + 1) }}>点击+1</button>
       <div onClick={() => history.push('/')}>history</div>
 
-      <div className="box">
+      <div className="box" ref={rootRef}>
         {list.map((v, i) => {
           return (<div key={i} className="list">{v}</div>)
         })}

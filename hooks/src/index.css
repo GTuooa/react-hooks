@@ -77,4 +77,5 @@ body {
   height: 100px;
   background-color: burlywood;
   text-align: center;
+  border-bottom: 1px solid red;
 }
